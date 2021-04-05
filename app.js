@@ -1,8 +1,9 @@
-var i;
-var num = 0;
+var alertString;
+alertString = addString("WebCamp");
 
-for(i = 1; i < 11; i++) {
-  num = num + i;
+alert(alertString);
+
+function addString(strA) {
+  var addStr = "Hello" + strA;
+  return addStr;
 }
-
-alert('1から10まで足し算した結果は' + num + 'です');
