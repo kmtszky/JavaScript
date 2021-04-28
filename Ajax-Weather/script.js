@@ -1,9 +1,14 @@
-$('#tab-contents .tab[id != "tab1"]').hide();
+API_KEY="abe9e231ab0e8d06fc8aae16abc21090";
 
-$('#tab-menu a').on('click', function(event) {
-  $("#tab-contents .tab").hide();
-  $("#tab-menu .active").removeClass("active");
-  $(this).addClass("active");
-  $($(this).attr("href")).show();
-  event.preventDefault();
+$(function() {
+  $("#btn").on('click', function() {
+    $.ajax({
+      url: "http://api.openweathermap.org/data/2.5/weather?q=" + $('#cityname').val() + "&units=metric&appid=" + API_KEY,
+      dataType: 'jsonp',
+    }).done(function (data) {
+      // 通信成功
+    }).fail(function (data) {
+      // 通信失敗
+    });
+  });
 });
